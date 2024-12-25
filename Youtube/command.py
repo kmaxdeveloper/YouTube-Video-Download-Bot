@@ -1,9 +1,3 @@
-# ©️ LISA-KOREA | @LISA_FAN_LK | NT_BOT_CHANNEL | LISA-KOREA/YouTube-Video-Download-Bot
-
-# [⚠️ Do not change this repo link ⚠️] :- https://github.com/LISA-KOREA/YouTube-Video-Download-Bot
-
-
-
 from pyrogram import Client, filters
 import datetime
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, ForceReply
@@ -11,22 +5,15 @@ from Youtube.config import Config
 from Youtube.script import Translation
 from Youtube.forcesub import handle_force_subscribe
 
-
-#########################
-
 # Calculate current time greeting
 currentTime = datetime.datetime.now()
 if currentTime.hour < 12:
-    wish = "Good morning 🌞"
+    wish = "Hayrli Tong ! 🌞"
 elif 12 <= currentTime.hour < 18:
-    wish = "Good afternoon 🌤️"
+    wish = "Hayrli Kun ! 🌤️"
 else:
-    wish = "Good evening 🌝"
+    wish = "Hayrli Kech ! 🌝"
 
-
-
-
-########################🎊 Lisa | NT BOTS 🎊######################################################
 @Client.on_callback_query(filters.regex("cancel"))
 async def cancel(client, callback_query):
     await callback_query.message.delete()
@@ -61,11 +48,11 @@ async def start(client, message):
         reply_markup=InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton('📍 Update Channel', url='https://t.me/NT_BOT_CHANNEL'),
+                InlineKeyboardButton('📍 Update Channel', url='https://t.me/kmaxProgrammers'),
             ],
             [
-                InlineKeyboardButton('👩‍💻 Developer', url='https://t.me/LISA_FAN_LK'),
-                InlineKeyboardButton('👥 Support Group', url='https://t.me/NT_BOTS_SUPPORT'),
+                InlineKeyboardButton('👩‍💻 Developer', url='https://t.me/kmaxProgrammers'),
+                InlineKeyboardButton('👥 Support Group', url='https://t.me/kmaxProgrammers'),
             ],
             [
                 InlineKeyboardButton('⛔️ Close', callback_data='cancel')
@@ -77,15 +64,12 @@ async def start(client, message):
 @Client.on_message(filters.command("help"))
 async def help(client, message):
     help_text = """
-Welcome to the YouTube Video Uploader Bot!
+YouTube video yuklovchi botiga xush kelibsiz!
 
-To upload a YouTube video, simply send me the YouTube link.
+YouTube videosini yuklash uchun menga YouTube havolasini yuboring.
 
-Enjoy using the bot!
+Botdan zavqlaning!
 
-©️ Channel : @NT_BOT_CHANNEL
+©️ Channel : @kmaxProgrammers
     """
     await message.reply_text(help_text)
-
-
-########################🎊 Lisa | NT BOTS 🎊######################################################
